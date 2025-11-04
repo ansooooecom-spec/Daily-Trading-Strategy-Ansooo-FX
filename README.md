@@ -1,0 +1,1 @@
+# Daily-Trading-Strategy-Ansooo-FX
