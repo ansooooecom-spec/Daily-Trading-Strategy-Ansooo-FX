@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Trading Daily Strategy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // Bleu
+                        secondary: '#10B981', // Vert
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animation simple pour l'effet de flou dans la section Hero */
+        @keyframes blob {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+    </style>
+</head>
+<body class="bg-black font-sans text-white">
+<script src="components/navbar.js"></script>
+    <custom-navbar></custom-navbar>
+
+    <section class="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 bg-gray-900 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <svg class="h-full w-full" fill="none" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                    <pattern id="graph-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M-3 13L13 -3M-5 15L15 -5M-7 17L17 -7" stroke="#374151" stroke-width="0.5" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#graph-pattern)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Daily Trading <span class="text-secondary">Strategy</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                    La <span class="font-bold text-white">seule méthode</span> qui vous permet de générer des revenus sur les marchés avec <span class="text-primary font-bold">seulement 30 min par jour.</span>
+                </p>
+
+                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl mb-10 border-l-4 border-red-500">
+                    <p class="text-red-500 font-bold text-sm uppercase tracking-widest mb-2">OFFRE SPÉCIALE - Se termine dans :</p>
+                    <div id="countdown" class="flex justify-center lg:justify-start space-x-4 text-white text-3xl md:text-4xl font-mono">
+                        <div class="p-2 bg-black rounded">
+                            <span class="countdown-days font-bold">00</span>
+                            <span class="block text-xs text-gray-400">Jours</span>
+                        </div>
+                        <div class="p-2 bg-black rounded">
+                            <span class="countdown-hours font-bold">00</span>
+                            <span class="block text-xs text-gray-400">Heures</span>
+                        </div>
+                        <div class="p-2 bg-black rounded">
+                            <span class="countdown-minutes font-bold">00</span>
+                            <span class="block text-xs text-gray-400">Minutes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="#pricing" class="bg-secondary text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:bg-opacity-80 transition duration-300 transform hover:scale-105">
+                        JE DÉMARRE MAINTENANT
+                    </a>
+                    <a href="#instructor" class="bg-transparent border-2 border-primary text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-primary transition duration-300">
+                        Découvrir Ansooo Fx
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 mt-12 lg:mt-0 relative flex justify-center">
+                <img 
+                    src="https://i.postimg.cc/GpXBMkLc/Affche-DTS-1.png" 
+                    alt="Couverture du livre Daily Trading Strategy by AnsooFx" 
+                    class="w-[350px] md:w-[450px] h-auto object-contain rounded-lg shadow-2xl border-4 border-gray-700"
+                >
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">Ce que vous allez apprendre</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="trending-up" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Le Daily Trading Strategy</h3>
+                    <p class="text-gray-400">Une méthode claire et précise pour identifier les meilleures opportunités chaque jour.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="text-secondary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Gestion de risque</h3>
+                    <p class="text-gray-400">Apprenez à protéger votre capital avec des règles de money management strictes.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="clock" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">30 minutes/jour</h3>
+                    <p class="text-gray-400">Une routine efficace qui ne prend que 30 minutes par jour pour analyser les marchés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instructor" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3">
+                <img src="https://i.postimg.cc/FFCsLWYk/A1.jpg" alt="AnsooFx" class="rounded-xl shadow-lg w-full">
+            </div>
+            <div class="md:w-2/3">
+                <h2 class="text-3xl font-bold text-white mb-6">À propos de Ansooo Fx</h2>
+                <p class="text-gray-400 mb-6">Trader actif avec  5 ans d'expérience sur les marchés financiers. Spécialiste des stratégies court-terme avec un taux de réussite supérieur à 75%.</p>
+                <p class="text-gray-400 mb-6">J'ai formé plus de 250 élèves à travers l'Afrique et développé une méthode unique adaptée aux marchés actuels.</p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center text-gray-300">
+                        <i data-feather="check-circle" class="text-secondary mr-2"></i>
+                        <span>5ans d'expérience</span>
+                    </div>
+                    <div class="flex items-center text-gray-300">
+                        <i data-feather="check-circle" class="text-secondary mr-2"></i>
+                        <span>+250 élèves formés</span>
+                    </div>
+                    <div class="flex items-center text-gray-300">
+                        <i data-feather="check-circle" class="text-secondary mr-2"></i>
+                        <span>75% de réussite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">Ils nous font confiance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="border border-gray-700 bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="Jean D." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-white">Jean Djiko.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">"La formation m'a permis de structurer mon trading. Je gagne maintenant de manière régulière depuis 2 mois. Merci AnsooFx!"</p>
+                </div>
+                <div class="border border-gray-700 bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="Marie L." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-white">Marie Lefi.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">"J'avais essayé plusieurs formations avant, mais celle d'Ansooo Fx est la seule qui m'a vraiment apporté des résultats concrets."</p>
+                </div>
+                <div class="border border-gray-700 bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/3" alt="Thomas P." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-white">Thomas Padogba.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">"La gestion de risque enseignée est exceptionnelle. J'ai divisé mes pertes par 3 tout en augmentant mes gains. Incroyable!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">Nos offres de formation</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+                    <div class="bg-primary text-white py-4 px-6">
+                        <h3 class="text-xl font-bold">Accès Basique</h3>
+                        <p class="opacity-90">Parfait pour débuter</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-white mb-4">5 000FCFA</div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Accès aux vidéos de formation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>PDF de la stratégie</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i data-feather="x" class="text-gray-600 mr-2"></i>
+                                <span>Support personnalisé</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i data-feather="x" class="text-gray-600 mr-2"></i>
+                                <span>Groupe privé</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block text-center bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">Choisir cette offre</a>
+                    </div>
+                </div>
+                <div class="bg-gray-900 rounded-xl shadow-lg border-2 border-secondary overflow-hidden transform scale-105 z-10">
+                    <div class="bg-secondary text-white py-4 px-6">
+                        <h3 class="text-xl font-bold">Accès Premium</h3>
+                        <p class="opacity-90">Le plus populaire</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-white mb-4">15 000FCFA</div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Accès aux vidéos de formation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>PDF des stratégies</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Support personnalisé</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Groupe privé</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block text-center bg-secondary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">Choisir cette offre</a>
+                    </div>
+                </div>
+                <div class="bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+                    <div class="bg-primary text-white py-4 px-6">
+                        <h3 class="text-xl font-bold">Accès Suprême</h3>
+                        <p class="opacity-90">Accès complet</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-white mb-4">50 000FCFA</div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Tous les avantages PRO</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>3 sessions de coaching 1:1</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Analyse de votre trading</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-secondary mr-2"></i>
+                                <span>Accès à vie</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block text-center bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">Choisir cette offre</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">Questions fréquentes</h2>
+            <div class="space-y-4">
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 transition duration-300">
+                        <h3 class="text-lg font-medium text-white text-left">Combien de temps dure la formation ?</h3>
+                        <i data-feather="chevron-down" class="text-white transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-gray-900">
+                        <p class="text-gray-400">Le contenu principal peut être assimilé en 2 semaines environ. Cependant, vous conservez l'accès à vie à tous les matériaux et mises à jour.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 transition duration-300">
+                        <h3 class="text-lg font-medium text-white text-left">Faut-il de l'expérience en trading ?</h3>
+                        <i data-feather="chevron-down" class="text-white transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-gray-900">
+                        <p class="text-gray-400">La formation est accessible aux débutants comme aux traders expérimentés. Nous partons des bases pour aller jusqu'aux stratégies avancées.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 transition duration-300">
+                        <h3 class="text-lg font-medium text-white text-left">Y a-t-il une garantie ?</h3>
+                        <i data-feather="chevron-down" class="text-white transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-gray-900">
+                        <p class="text-gray-400">Nous offrons une garantie satisfait ou remboursé de 30 jours. Si vous n'êtes pas satisfait, nous vous remboursons intégralement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">Témoignage & Performance </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://i.postimg.cc/J4CFqFpP/photo-2025-11-03-18-09-29.jpg" alt="Trading 1" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <h3 class="text-white text-xl font-bold">ETUDIANT Marc GABON</h3>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://i.postimg.cc/wxX26jkG/photo-2025-11-03-18-12-04.jpg" alt="Trading 2" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <h3 class="text-white text-xl font-bold">ETUDIANT cedric SENEGAL </h3>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://i.postimg.cc/Kjftt4qj/photo-2025-11-03-18-09-30.jpg" alt="Trading 3" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <h3 class="text-white text-xl font-bold">ETUDIANT RICH CAMEROUN </h3>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://i.postimg.cc/bwD2w6j3/photo-2025-11-03-18-09-28.jpg" alt="Trading 4" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <h3 class="text-white text-xl font-bold">ETUDIANT GERAUD NIGER </h3>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://i.postimg.cc/fbQkTDCj/photo-2025-11-03-17-58-55.jpg" alt="Trading 5" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <h3 class="text-white text-xl font-bold">ETUDIANT MARCEL CONGO</h3>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://i.postimg.cc/jdGSZtpY/photo-2025-11-03-20-38-28.jpg" alt="Trading 6" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <h3 class="text-white text-xl font-bold">Performance</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Prêt à transformer votre trading ?</h2>
+            <p class="text-xl text-white opacity-90 mb-8">Rejoignez des centaines de traders qui ont déjà adopté la Daily Trading Strategy</p>
+            <a href="#pricing" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300">Commencer maintenant</a>
+        </div>
+    </section>
+
+    <script src="components/footer.js"></script>
+    <custom-footer></custom-footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Fonctionnalité de compte à rebours
+        function startCountdown() {
+            // Définissez la date de fin (Exemple: 7 jours à partir de maintenant)
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7); 
+
+            const countdownElement = document.getElementById('countdown');
+            const daysSpan = countdownElement.querySelector('.countdown-days');
+            const hoursSpan = countdownElement.querySelector('.countdown-hours');
+            const minutesSpan = countdownElement.querySelector('.countdown-minutes');
+
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "<p class='text-red-500 font-bold'>L'offre est terminée !</p>";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                daysSpan.textContent = String(days).padStart(2, '0');
+                hoursSpan.textContent = String(hours).padStart(2, '0');
+                minutesSpan.textContent = String(minutes).padStart(2, '0');
+            };
+
+            updateCountdown();
+            const interval = setInterval(updateCountdown, 60000); // Mise à jour toutes les minutes
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        startCountdown(); // Lance le compte à rebours au chargement de la page
+    </script>
+<script
